@@ -6,11 +6,14 @@
     */
 
     //Entrada
-
+    let senha = Number(prompt(`informe uma senha com quatro números inteiros.`).trim());
 
     //Processamento
-
+    while (senha.toString().length != 4 && Number.isInteger(senha)) {
+        senha = Number(prompt(`Senha Incorreta, escolha uma senha com quatro números inteiros.`).trim());
+    }
 
     //Saída
+    alert(`Senha Correta!`);
 
 </script>

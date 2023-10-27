@@ -11,11 +11,31 @@
     */
 
     //Entrada
-
+    let user = prompt(`insira um nome de usuário.`).trim();
+    let idade = Number(prompt(`informe sua idade.`).trim());
+    let salario = Number(prompt(`insira o seu salário.`).replace(",",".").trim());
+    let sexo = prompt(`seu sexo é 'f' ou 'm'?`).trim().toLowerCase();
+    let EC = prompt(`qual seu estado civil? ('s', 'c', 'v', 'd')`).trim().toLowerCase();
 
     //Processamento
-
+    while (user.length <= 3) {
+        user = prompt(`Escolha um nome com mais de 3 caractéres.`).trim();
+    }
+    while (idade < 0 && idade > 150) {
+        idade = Number(prompt(`Escolha uma idade emtre 0 a 150.`).trim());
+    }
+    while (salario <= 0) {
+        salario = Number(prompt(`Escolha um salário maior que 0.`).trim().replace(",","."));
+    }
+      
+    while (sexo != "f" && sexo != "m") {
+        sexo = prompt(`Erro, seu sexo é 'f' ou 'm'?`).trim().toLowerCase();
+    }
+    while (EC != "s" && EC != "c" && EC != "v" && EC != "d") {
+        EC = prompt(`Erro, qual seu estado civil? ()'s', 'c', 'v', 'd')`).trim().toLowerCase();
+    }
 
     //Saída
+    alert(`nome: ${user}\n idade: ${idade}\n salário: ${salario}\n sexo: ${sexo}\n Estado Civil: ${EC}`);
 
 </script>

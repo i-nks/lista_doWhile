@@ -20,13 +20,44 @@
     */
 
     //Entrada
-
-
+    let J = 0
+    let M = 0
+    let N = 0
+    let B = 0
+    let votos = Infinity
+    
     //Processamento
+   
+    while (votos != 0) {
 
+        votos = parseInt(prompt(`em quem voce votará: 1-Joãozinho, 2-Mariazinha, 3-Nulo, 4-Branco`))
+
+        if (votos === 1) {
+            J++
+        }
+        else if (votos === 2) {
+            M++
+        }
+        else if (votos === 3) {
+            N++
+        }
+        else if (votos == 4){
+            B++
+        }
+    }
+
+    const quantidade = B + M + N + J
+
+    if (J > M ) {
+        alert(`o candidato vencedor foi Joãozinho com ${J} votos e a porcentagem foi de ${(J / quantidade) * 100}%. \nMariazinha recebeu ${M} votos e a porcentagem foi de ${(M / quantidade) * 100}%.. \nos votos nulos deram: ${(N / quantidade) * 100}% \ne os votos em branco deram: ${(B / quantidade) * 100}%`);
+    }
+    else if (M > J) {
+        alert(`o candidato vencedor foi Mariazinha com ${M} votos e a porcentagem foi de ${(M / quantidade) * 100}%.. \nJoãozinho recebeu ${J} votos e a porcentagem foi de ${(J / quantidade) * 100}%.. \nos votos nulos deram: ${(N / quantidade) * 100}% \ne os votos em branco deram: ${(B / quantidade) * 100}%`);
+    }
+    else {
+        alert(`empate. \nJoãozinho recebeu ${J} votos e a porcentagem foi de ${(J / quantidade) * 100}%.. \nMariazinha recebeu ${M} votos e a porcentagem foi de ${(M / quantidade) * 100}%.. \nos votos nulos deram: ${(N / quantidade) * 100}% \ne os votos em branco deram: ${(B / quantidade) * 100}%`)
+    }
 
     //Saída
-
+    
 </script>
-
-

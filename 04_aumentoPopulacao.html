@@ -6,11 +6,21 @@
     */
 
     //Entrada
-
+    let pA = 80000
+    let pB = 200000
+    let taxaA = 0.03
+    let taxaB = 0.0015
+    let anos = 0
 
     //Processamento
 
+    while (pA <= pB) {
+        pA += pA * taxaA;
+        pB += pB * taxaB;
+        anos++
+    }
 
     //Saída
+    alert(`vai levar ${anos}.`);
 
 </script>

@@ -6,11 +6,15 @@
     */
 
     //Entrada
-
+    const usuário = prompt(`insira seu nome de usuário.`).trim();
+    let senha = prompt(`insira sua senha (diferente do seu usuário).`);
 
     //Processamento
-
+    while (usuário == senha) {
+        senha = prompt(`Erro, escolha outra senha.`);
+}
 
     //Saída
+    alert(`O seu usuário é ${usuário} e sua senha ${senha}.`);
 
 </script>

@@ -12,12 +12,42 @@
     Finalize a entrada de dados ao ser digitada uma idade negativa.
     */
 
-    //Entrada
+    let pesquisa = [
+        { idade: parseInt(prompt("Informe sua idade.")), sexo: prompt("Informe seu sexo (M) ou (F)").toUpperCase(), salario: parseFloat(prompt("Informe seu salário")) },
+        { idade: parseInt(prompt("Informe sua idade.")), sexo: prompt("Informe seu sexo (M) ou (F)").toUpperCase(), salario: parseFloat(prompt("Informe seu salário")) },
+        { idade: parseInt(prompt("Informe sua idade.")), sexo: prompt("Informe seu sexo (M) ou (F)").toUpperCase(), salario: parseFloat(prompt("Informe seu salário")) },
+        { idade: parseInt(prompt("Informe sua idade.")), sexo: prompt("Informe seu sexo (M) ou (F)").toUpperCase(), salario: parseFloat(prompt("Informe seu salário")) },
+        { idade: parseInt(prompt("Informe sua idade.")), sexo: prompt("Informe seu sexo (M) ou (F)").toUpperCase(), salario: parseFloat(prompt("Informe seu salário")) }
+    ]
 
+    let contador = 0;
+    let mediaSalario = 0;
+    let mulheres = 0;
 
-    //Processamento
+    if (pesquisa[0].idade > 0 || pesquisa[1].idade > 0 || pesquisa[2].idade > 0 || pesquisa[3].idade > 0 || pesquisa[4].idade > 0) {
+        while (contador < pesquisa.length) {
+            mediaSalario += pesquisa[contador].salario;
+            if (pesquisa[contador].sexo == "F") {
+                mulheres++;
+            }
+            contador++;
+        }
 
+        pesquisa.sort(function (x, y) {
+            return x.idade - y.idade;
+        })
 
-    //Saída
+        let menorIdade = pesquisa[0].idade;
+        let maiorIdade = pesquisa[pesquisa.length - 1].idade;
+
+        pesquisa.sort(function (x, y) {
+            return x.salario - y.salario;
+        })
+
+        document.write(`Média de salários: ${mediaSalario/pesquisa.length}. Maior idade: ${maiorIdade} e Menor idade: ${menorIdade}. A quantidade de mulheres é de ${mulheres} mulheres. E a pessoa que tem o menor salário tem ${pesquisa[0].idade} anos e é do sexo: ${pesquisa[0].sexo}`);
+
+    } else {
+        alert("Dado inválido!");
+    }
 
 </script>
